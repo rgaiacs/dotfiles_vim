@@ -8,9 +8,13 @@ syntax on
 set background=dark
 
 " Indentation
-set shiftwidth=4
 set expandtab
+set shiftwidth=4
 set softtabstop=4
+set ai
+
+" Not break word when break lins
+set linebreak
 
 " REQUIRED. This makes vim invoke Latex-Suite when you open a tex file.
 filetype plugin on
@@ -52,3 +56,9 @@ inoremap Ó \'{O}
 inoremap õ \~{o}
 inoremap Ô \~{O}
 inoremap ç \c{c}
+
+" Jumps
+map [[ ?{<CR>w99[{
+map ][ /}<CR>b99]}
+map ]] j0[[%/{<CR>
+map [] k$][%?}<CR>

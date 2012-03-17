@@ -485,3 +485,46 @@ if !exists("g:C_Ctrl_j") || ( exists("g:C_Ctrl_j") && g:C_Ctrl_j != 'off' )
   imap    <buffer>  <silent>  <C-j>    <C-R>=C_JumpCtrlJ()<CR>
 endif
 "
+"-------------------------------------------------------------------------------
+" Update time stamp
+"-------------------------------------------------------------------------------
+autocmd Bufwritepre,filewritepre *.c execute "normal ma"
+autocmd Bufwritepre,filewritepre *.c exe "1," . 10 . "g/Last Change: .*/s/Last Change: .*/Last Change: " .strftime("%d.%m.%y %X")
+autocmd bufwritepost,filewritepost *.c execute "normal `a"
+"
+"-------------------------------------------------------------------------------
+" Various settings
+"-------------------------------------------------------------------------------
+set complete+=k                 " scan the files given with the 'dictionary' option
+set history=50                  " keep 50 lines of command line history
+set showcmd                     " display incomplete commands
+set smartindent                 " smart autoindenting when starting a new line
+set expandtab
+set shiftwidth=4
+set softtabstop=4
+set wildignore=*.bak,*.o,*.e,*~ " wildmenu: ignore these extensions
+set wildmenu                    " command-line completion in an enhanced mode
+"
+"-------------------------------------------------------------------------------
+" comma always followed by a space
+"-------------------------------------------------------------------------------
+inoremap  ,  ,<Space>
+"
+"-------------------------------------------------------------------------------
+" autocomplete parenthesis, brackets and braces
+"-------------------------------------------------------------------------------
+inoremap ( ()<Left>
+inoremap [ []<Left>
+inoremap { {}<Left>
+"
+vnoremap ( s()<Esc>P<Right>%
+vnoremap [ s[]<Esc>P<Right>%
+vnoremap { s{}<Esc>P<Right>%
+"
+"-------------------------------------------------------------------------------
+" autocomplete quotes (visual and select mode)
+"-------------------------------------------------------------------------------
+xnoremap  '  s''<Esc>P<Right>
+xnoremap  "  s""<Esc>P<Right>
+xnoremap  `  s``<Esc>P<Right>
+"

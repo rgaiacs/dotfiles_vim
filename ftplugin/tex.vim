@@ -1,8 +1,8 @@
 " this is mostly a matter of taste. but LaTeX looks good with just a bit
 " of indentation.
-" set expandtab
-" set shiftwidth=4
-" set softtabstop=4
+set expandtab
+set shiftwidth=4
+set softtabstop=4
 
 " TIP: if you write your \label's as \label{fig:something}, then if you
 " type in \ref{fig: and press <C-n> you will automatically cycle through
@@ -32,4 +32,14 @@ imap <C-c> <Plug>Tex_MathCal
 imap <C-l> <Plug>Tex_LeftRight
 
 " Insert e-acute
-imap <C-i> <leader>it <Plug>Tex_InsertItemOnThisLine
+imap <buffer> <leader>it <Plug>Tex_InsertItemOnThisLine
+
+let g:tex_indent_brace = 0
+
+" Update time stamp
+autocmd Bufwritepre,filewritepre *.tex execute "normal ma"
+autocmd Bufwritepre,filewritepre *.tex exe "1," . 10 . "g/% Last Change: .*/s/% Last Change: .*/% Last Change: " .strftime("%d.%m.%y %X")
+autocmd bufwritepost,filewritepost *.tex execute "normal `a"
+
+" comma always followed by a space
+inoremap  <,>  ,<Space>

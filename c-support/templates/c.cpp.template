@@ -56,7 +56,7 @@ void<CURSOR>
 |?CLASSNAME|::|?METHODNAME| ( <+argument list+> )
 {
 	return ;
-}		/* -----  end of method |CLASSNAME|::|?METHODNAME|  ----- */
+}		/* end of method |CLASSNAME|::|?METHODNAME| */
 
 $%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 == cpp.accessor-implementation ==
@@ -68,7 +68,7 @@ inline |?RETURNTYPE|
 |CLASSNAME|::get_|ATTRIBUTE| (  ) const
 {
 	return |ATTRIBUTE|;
-}		/* -----  end of method |CLASSNAME|::get_|ATTRIBUTE|  ----- */
+}		/* end of method |CLASSNAME|::get_|ATTRIBUTE| */
 
 /*
  * Class:  |CLASSNAME|
@@ -79,7 +79,7 @@ inline void
 {
 	|ATTRIBUTE|	= value;
 	return ;
-}		/* -----  end of method |CLASSNAME|::set_|ATTRIBUTE|  ----- */
+}		/* end of method |CLASSNAME|::set_|ATTRIBUTE| */
 <CURSOR>
 $%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 == cpp.class-definition ==
@@ -91,7 +91,7 @@ class |CLASSNAME|
 {
 	public:
 		// LIFECYCLE
-		|CLASSNAME| ();                             /* constructor */
+		|CLASSNAME| ();                 /* constructor */
 
 		// ACCESSORS
 
@@ -166,7 +166,7 @@ $%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
  */
 |CLASSNAME|::|CLASSNAME| ( const |CLASSNAME| &other )
 {
-}  /* -----  end of method |CLASSNAME|::|CLASSNAME|  (copy constructor)  ----- */
+}  /* end of method |CLASSNAME|::|CLASSNAME|  (copy constructor) */
 
 /*
  * Class: |CLASSNAME|
@@ -188,7 +188,7 @@ $%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
   if ( this != &other ) {
   }
   return *this;
-}  /* -----  end of method |CLASSNAME|::operator =  (assignment operator)  ----- */
+}  /* end of method |CLASSNAME|::operator =  (assignment operator) */
 
 $%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 == cpp.error-class ==
@@ -202,7 +202,7 @@ class |CLASSNAME|
               virtual ~|CLASSNAME| ( )  { }
               virtual string what ( ) const throw ( )  { return message; }
   protected:  string  message;
-}; /* -----  end of class |CLASSNAME|  ----- */
+}; /* end of class |CLASSNAME| */
 
 $%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 == cpp.template-method-implementation ==
@@ -210,7 +210,7 @@ template < class T >
 void<CURSOR> |?CLASSNAME|<T>::|?METHODNAME| ( <+argument list+> )
 {
 	return ;
-}		/* -----  end of method |CLASSNAME|<T>::|METHODNAME|  ----- */
+}		/* end of method |CLASSNAME|<T>::|METHODNAME| */
 
 $%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 == cpp.template-accessor-implementation ==
@@ -222,24 +222,24 @@ template < class T >
 inline  |?RETURNTYPE| |CLASSNAME|<T>::get_|ATTRIBUTE| (  ) const
 {
 	return |ATTRIBUTE|;
-}		/* -----  end of method |CLASSNAME|<T>::get_|ATTRIBUTE|  ----- */
+}		/* end of method |CLASSNAME|<T>::get_|ATTRIBUTE| */
 
 /*
- * Class:  |CLASSNAME|
- * Method:  set_|ATTRIBUTE|
+ * Class: |CLASSNAME|
+ * Method: set_|ATTRIBUTE|
  */
 template < class T >
 inline  void |CLASSNAME|<T>::set_|ATTRIBUTE| ( |RETURNTYPE| value )
 {
 	|ATTRIBUTE|	= value;
 	return ;
-}		/* -----  end of method |CLASSNAME|<T>::set_|ATTRIBUTE|  ----- */
+}		/* end of method |CLASSNAME|<T>::set_|ATTRIBUTE|*/
 
 $%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 == cpp.template-class-definition ==
 /*
- * Class:  |?CLASSNAME:c|
- * Description:  <CURSOR>
+ * Class: |?CLASSNAME:c|
+ * Description: <CURSOR>
  */
 template < class T >
 class |CLASSNAME|
@@ -248,119 +248,107 @@ class |CLASSNAME|
     // LIFECYCLE
     |CLASSNAME| ();                             /* constructor */
 
-		/* ====================  ACCESSORS     ======================================= */
+		// ACCESSORS
 
-		/* ====================  MUTATORS      ======================================= */
+		// MUTATORS
 
-		/* ====================  OPERATORS     ======================================= */
+		// OPERATORS
 
   protected:
-    /* ====================  DATA MEMBERS  ======================================= */
+    // DATA MEMBERS
 
   private:
-    /* ====================  DATA MEMBERS  ======================================= */
+    // DATA MEMBERS
 
-}; /* ----------  end of template class |CLASSNAME|  ---------- */
+}; /* end of template class |CLASSNAME| */
 
 $%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 == cpp.template-class-implementation ==
 /*
- *--------------------------------------------------------------------------------------
- *       Class:  |?CLASSNAME:c|
- *      Method:  |CLASSNAME|
+ * Class: |?CLASSNAME:c|
+ * Method: |CLASSNAME|
  * Description:  
- *--------------------------------------------------------------------------------------
  */
 template < class T >
 |CLASSNAME| < T >::|CLASSNAME| ()
 {<CURSOR>
-}  /* ----------  end of constructor of template class |CLASSNAME|  ---------- */
+}  /* end of constructor of template class |CLASSNAME| */
 
 
 $%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 == cpp.template-class-using-new-definition ==
 /* 
- * =====================================================================================
- *        Class:  |?CLASSNAME:c|
- *  Description:  <CURSOR>
- * =====================================================================================
+ * Class:  |?CLASSNAME:c|
+ * Description:  <CURSOR>
  */
 
 template < class T >
 class |CLASSNAME|
 {
   public:
-    // ====================  LIFECYCLE     =======================================
-    |CLASSNAME| ();                           /* constructor      */
-    |CLASSNAME| ( const |CLASSNAME| &other ); /* copy constructor */
-    ~|CLASSNAME| ();                          /* destructor       */
+    // LIFECYCLE
+    |CLASSNAME| ();                             /* constructor */
+    |CLASSNAME| ( const |CLASSNAME| &other );   /* copy constructor */
+    ~|CLASSNAME| ();                            /* destructor */
 
-		/* ====================  ACCESSORS     ======================================= */
+		// ACCESSORS
 
-		/* ====================  MUTATORS      ======================================= */
+		// MUTATORS
 
-		/* ====================  OPERATORS     ======================================= */
+		// OPERATORS
 
     |CLASSNAME|& operator = ( const |CLASSNAME| &other ); // assignment operator
 
   protected:
-    /* ====================  DATA MEMBERS  ======================================= */
+    // DATA MEMBERS
 
   private:
-    /* ====================  DATA MEMBERS  ======================================= */
+    // DATA MEMBERS
 
-}; /* -----  end of template class |CLASSNAME|  ----- */
+}; /* end of template class |CLASSNAME| */
 
 $%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 == cpp.template-class-using-new-implementation ==
 /*
- *--------------------------------------------------------------------------------------
- *       Class:  |?CLASSNAME:c|
- *      Method:  |CLASSNAME|
- * Description:  constructor
- *--------------------------------------------------------------------------------------
+ * Class: |?CLASSNAME:c|
+ * Method: |CLASSNAME|
+ * Description: constructor
  */
 template < class T >
 |CLASSNAME|< T >::|CLASSNAME| ()
 {<CURSOR>
-}  /* ----------  end of constructor of template class |CLASSNAME|  ---------- */
+}  /* end of constructor of template class |CLASSNAME| */
 
 /*
- *--------------------------------------------------------------------------------------
- *       Class:  |CLASSNAME|
- *      Method:  |CLASSNAME|
- * Description:  copy constructor
- *--------------------------------------------------------------------------------------
+ * Class: |CLASSNAME|
+ * Method: |CLASSNAME|
+ * Description: copy constructor
  */
 template < class T >
 |CLASSNAME|< T >::|CLASSNAME| ( const |CLASSNAME| &other )
 {
-}  /* ----------  end of copy constructor of template class |CLASSNAME|  ---------- */
+}  /* end of copy constructor of template class |CLASSNAME| */
 
 /*
- *--------------------------------------------------------------------------------------
- *       Class:  |CLASSNAME|
- *      Method:  ~|CLASSNAME|
- * Description:  destructor
- *--------------------------------------------------------------------------------------
+ * Class: |CLASSNAME|
+ * Method: ~|CLASSNAME|
+ * Description: destructor
  */
 template < class T >
 |CLASSNAME|< T >::~|CLASSNAME| ()
 {
-}  /* ----------  end of destructor of template class |CLASSNAME|  ---------- */
+}  /* end of destructor of template class |CLASSNAME| */
 
 /*
- *--------------------------------------------------------------------------------------
- *       Class:  |CLASSNAME|
- *      Method:  operator =
- * Description:  assignment operator
- *--------------------------------------------------------------------------------------
+ * Class: |CLASSNAME|
+ * Method: operator =
+ * Description: assignment operator
  */
 template < class T >
 |CLASSNAME|< T >& |CLASSNAME|< T >::operator = ( const |CLASSNAME| &other )
 {
   return *this;
-}  /* ----------  end of assignment operator of template class |CLASSNAME|  ---------- */
+}  /* end of assignment operator of template class |CLASSNAME| */
 
 $%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 == cpp.template-function ==
@@ -368,7 +356,7 @@ template <class T>
 void<CURSOR> |?TEMPALTE_FUNCTION_NAME| ( <+argument list+> )
 {
 	return ;
-}		/* -----  end of template function |?TEMPALTE_FUNCTION_NAME|  ----- */
+}  /* end of template function |?TEMPALTE_FUNCTION_NAME| */
 $%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 == cpp.operator-in ==
 ostream &
@@ -376,7 +364,7 @@ operator << ( ostream & os, const |?CLASSNAME| & obj )
 {
 	os << obj.<CURSOR> ;
 	return os;
-}		/* -----  end of function operator <<  ----- */
+}  /* end of function operator << */
 $%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 == cpp.operator-out ==
 istream &
@@ -384,7 +372,7 @@ operator >> ( istream & is, |?CLASSNAME| & obj )
 {
 	is >> obj.<CURSOR> ;
 	return is;
-}		/* -----  end of function operator >>  ----- */
+}  /* end of function operator >> */
 $%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 == cpp.try-catch ==
 try {
@@ -437,7 +425,7 @@ using namespace std;
 using namespace |?NAMESPACE|;
 == cpp.namespace-block ==
 namespace |?NAMESPACE| {<CURSOR>
-<SPLIT>}		/* -----  end of namespace |NAMESPACE|  ----- */
+<SPLIT>}		/* end of namespace |NAMESPACE| */
 == cpp.namespace-alias ==
 namespace |?NAMESPACE_ALIAS|	= {-original namespace name-};
 $%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%

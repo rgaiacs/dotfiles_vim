@@ -1,9 +1,106 @@
 <+	+>	!comp!	!exe!
-%        File: !comp!expand("%:p:t")!comp!
-%     Created: !comp!strftime("%a %b %d %I:00 %p %Y ").substitute(strftime('%Z'), '\<\(\w\)\(\w*\)\>\(\W\|$\)', '\1', 'g')!comp!
-% Last Change: !comp!strftime("%a %b %d %I:00 %p %Y ").substitute(strftime('%Z'), '\<\(\w\)\(\w*\)\>\(\W\|$\)', '\1', 'g')!comp!
+% Filename: !comp!expand("%:p:t")!comp!
+% This code is part of <+PROJECTNAME+>
+% 
+% Description: <+DESCRIPTION+>
+% 
+% Created: !comp!strftime("%d.%m.%y %X")!comp!
+% Last Change: !comp!strftime("%d.%m.%y %X")!comp!
+% 
+% Author: <+AUTHOR+>, <+EMAIL+>
+% Organization: <+ORGANIZATION+>
+% 
+% Copyright (c) <+YEAR+>, <+AUTHOR+>. All rights reserved.
+% 
+% This file is license under the terms of the GNU General Public License as published by the Free Software Foundation, either version 3 of the License, or (at your option) any later version. More details at <http://www.gnu.org/licenses/>
 %
-\documentclass[a4paper]{article}
+\documentclass[12pt,a4paper]{article}
+%Pacotes utilizados
+\usepackage[top=3cm,left=2cm,right=2cm,bottom=3cm]{geometry} %Borda das p\'{a}gina
+\usepackage[utf8]{inputenc} %Ser\'{a} utilizado a codifica\c{c}ao UTF8
+%\usepackage[latin1]{inputenc} % Ser\'{a} utilizado a codifica\c{c}ao latin1
+\usepackage[brazil]{babel} %Ser\'{a} utilizado o idioma portugu\^{e}s
+\usepackage{indentfirst} %Identa\c{c}\~{a}o de linha
+\usepackage{setspace} %Espa\c{c}amento entre linas
+\usepackage{amsmath, amsfonts, amssymb, amsthm} % Pacote matem\'{a}tico
+\usepackage{graphicx} %Pacote para incluir figuras
+\usepackage{color} %Pacote para cores
+\usepackage{tikz} %Pacote para desenho de figuras
+\usepackage{pgfplots} %Pacote para desenho de gr\'{a}ficos
+\usepackage{subfigure} % Pacote para subfiguras
+\usepackage{url} % Pacote para url
+\usepackage{hyperref} % Pacote para hyperlink
+\usepackage{algorithmic} % Pacote para algoritmos
+\usepackage{algorithm} % Pacote para algoritmos
+\usepackage{listings} % Pacote para c\'{o}digos
+
+%Personalização
+%\pgfplotsset{
+%height=0.35\textheight,
+%width=0.8\textwidth,
+%legend style={
+%at={(0.3,0.97)},
+%anchor=north,
+%font=\footnotesize
+%},
+%xlabel={},
+%ylabel={},
+%xtick={},
+%grid=major,
+%}
+
+\hypersetup{
+%colorlinks = true,
+}
+
+\floatname{algorithm}{Algoritmo}
+
+\algsetup{linenosize=\small}
+\renewcommand{\algorithmicrequire}{\textbf{Entrada:}}
+\renewcommand{\algorithmicensure}{\textbf{Saída:}}
+\renewcommand{\algorithmicend}{\textbf{fim}}
+\renewcommand{\algorithmicif}{\textbf{se}}
+\renewcommand{\algorithmicthen}{\textbf{ent\~{a}o}}
+\renewcommand{\algorithmicelse}{\textbf{caso contr\'{a}rio}}
+\renewcommand{\algorithmicendif}{\algorithmicend}
+\renewcommand{\algorithmicfor}{\textbf{para}}
+\renewcommand{\algorithmicforall}{\textbf{para todo}}
+\renewcommand{\algorithmicdo}{\textbf{fa\c{c}a}}
+\renewcommand{\algorithmicendfor}{\algorithmicend}
+\renewcommand{\algorithmicwhile}{\textbf{enquanto}}
+\renewcommand{\algorithmicendwhile}{\algorithmicend}
+\renewcommand{\algorithmicrepeat}{\textbf{repita}}
+\renewcommand{\algorithmicuntil}{\textbf{at\'{e}}}
+\renewcommand{\algorithmicreturn}{\textbf{retorne}}
+\renewcommand{\algorithmiccomment}[1]{\hspace{2em}/* #1 */}
+
+\renewcommand{\lstlistingname}{C\'{o}digo}
+\lstset{ %
+% language=Octave,                % the language of the code
+basicstyle=\ttfamily\small,       % the size of the fonts that are used for the code
+numbers=left,                   % where to put the line-numbers
+numberstyle=\footnotesize,      % the size of the fonts that are used for the line-numbers
+stepnumber=5,                   % the step between two line-numbers. If it's 1, each line 
+% will be numbered
+numbersep=5pt,                  % how far the line-numbers are from the code
+% backgroundcolor=\color{white},  % choose the background color. You must add \usepackage{color}
+showspaces=false,               % show spaces adding particular underscores
+showstringspaces=false,         % underline spaces within strings
+showtabs=false,                 % show tabs within strings adding particular underscores
+% frame=single,                   % adds a frame around the code
+tabsize=4,                      % sets default tabsize to 2 spaces
+captionpos=t,                   % sets the caption-position to bottom
+breaklines=true,                % sets automatic line breaking
+breakatwhitespace=false,        % sets if automatic breaks should only happen at whitespace
+caption={\texttt{\lstname}},                 % show the filename of files included with \lstinputlisting;
+% also try caption instead of title
+% escapeinside={\%*}{*)},         % if you want to add a comment within your code
+% morekeywords={#}            % if you want to add more keywords to the set
+}
+
+\newtheorem{defi}{Definição}
+\newtheorem{prop}{Proposição}
+
 \begin{document}
 <++>
 \end{document}

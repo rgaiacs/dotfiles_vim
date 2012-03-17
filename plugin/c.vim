@@ -3756,7 +3756,3 @@ endif " has("autocmd")
 "
 "=====================================================================================
 " vim: tabstop=2 shiftwidth=2 foldmethod=marker
-" Update time stamp
-autocmd Bufwritepre,filewritepre *.c execute "normal ma"
-autocmd Bufwritepre,filewritepre *.c exe "1," . 10 . "g/Last Modified: .*/s/Last Modified: .*/Last Modified: " .strftime("%d.%m.%y %X")
-autocmd bufwritepost,filewritepost *.c execute "normal `a"
