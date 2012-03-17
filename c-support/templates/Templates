@@ -1,0 +1,32 @@
+$
+$ =============================================================
+$ ========== USER MACROS ======================================
+$ =============================================================
+$
+|AUTHOR|    = Raniere Gaia Costa da Silva
+|AUTHORREF| = 
+|EMAIL|     = r.gaia.cs@gmail.com
+|COMPANY|   = 
+|ORGANIZATION| = Universidade Estadual de Campinas, UNICAMP
+|COPYRIGHT| = Copyright (c) |YEAR|, |AUTHOR|. All rights reserved.
+|LICENSE_GNU| = GNU General Public License as published bythe Free Software Foundation, either version 3 of the License, or (at your option) any later version. More details at <http://www.gnu.org/licenses/>
+|STYLE|     = default
+$
+$ =============================================================
+$ ========== FILE INCLUDES ====================================
+$ =============================================================
+$
+|includefile| = c.comments.template
+|includefile| = c.cpp.template
+|includefile| = c.idioms.template
+|includefile| = c.preprocessor.template
+|includefile| = c.statements.template
+$
+== IF |STYLE| IS CPP ==
+|includefile| = cpp.comments.template
+|includefile| = cpp.cpp.template
+|includefile| = cpp.idioms.template
+|includefile| = cpp.preprocessor.template
+|includefile| = cpp.statements.template
+== ENDIF ==
+$
